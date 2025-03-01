@@ -1,0 +1,15 @@
+version: 1.0
+runtime: python3
+
+build:
+  commands:
+    # Install Python dependencies
+    - pip install --no-cache-dir -r requirements.txt
+
+run:
+  # Start your Flask app with Gunicorn (example: "hello.py" has an "app" object)
+  command: gunicorn app:app
+  
+  # Expose port 8000 (the default for App Runner)
+  network:
+    port: 8000
